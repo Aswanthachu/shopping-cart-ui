@@ -4,7 +4,7 @@
 
 @layer utilities {
   .styled-scrollbar::-webkit-scrollbar {
-    height: 7px;
+    height: 5px;
     background-color: #fff;
     border-radius: 14px;
   }
@@ -12,6 +12,5 @@
   .styled-scrollbar::-webkit-scrollbar-thumb {
     background-color: #e8e9eb;
     border-radius: 14px;
-    width: 12px;
   }
 }

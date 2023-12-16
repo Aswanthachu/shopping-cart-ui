@@ -1,6 +1,7 @@
 import { ShoppingCartIcon, ArrowLeftIcon } from "@heroicons/react/24/solid";
 
-const Header = () => {
+const Header = ({data}) => {
+    console.log(typeof JSON.parse(data),data?.restaurant_name);
   return (
     <div className="p-3 md:p-5 lg:p-0 flex justify-between">
       <div className="flex gap-2 items-center">
@@ -8,7 +9,7 @@ const Header = () => {
           <ArrowLeftIcon className="w-4 text-black/75 font-semibold" />
         </span>
         <h3 className="font-semibold text-gray-700/80 text-lg md:text-2xl">
-          UNI Resto Cafe
+          {data?.restaurant_name}
         </h3>
       </div>
 

@@ -1,10 +1,40 @@
+import { useEffect, useState } from "react";
 import { Header, MenuItem, Tab } from "./components";
+import axios from "axios";
 
 function App() {
-  
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://run.mocky.io/v3/ae48aa26-86fc-41d5-88bb-9043c94bf73f"
+        );
+        setData(response.data)
+      } catch (error) {
+        setError(error.message || "An error occurred while fetching data.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
+
   return (
     <main className=" p-0 lg:p-5 font-main">
-      <Header />
+      <Header data={data}/>
       <div className=" lg:mt-4 w-full flex overflow-x-auto styled-scrollbar lg:pt-2">
         <Tab />
         <Tab />
