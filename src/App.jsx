@@ -1,10 +1,10 @@
-import { Header, Tab } from "./components";
+import { Header, MenuItem, Tab } from "./components";
 
 function App() {
   return (
-    <main className=" p-3 md:p-5 font-main">
+    <main className=" p-0 lg:p-5 font-main">
       <Header />
-      <div className="mt-4 w-full flex overflow-x-auto styled-scrollbar pt-2">
+      <div className=" lg:mt-4 w-full flex overflow-x-auto styled-scrollbar lg:pt-2">
         <Tab />
         <Tab />
         <Tab />
@@ -16,6 +16,15 @@ function App() {
         <Tab />
         <Tab />
         <Tab />
+      </div>
+      <div className="w-full">
+        <MenuItem />
+        <MenuItem />
+        <MenuItem />
+        <MenuItem />
+        <MenuItem />
+        <MenuItem />
+        <MenuItem />
       </div>
     </main>
   );

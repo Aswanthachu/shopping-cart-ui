@@ -2,7 +2,7 @@ import { ShoppingCartIcon } from "@heroicons/react/24/solid";
 
 const Header = () => {
   return (
-    <div className="flex justify-between">
+    <div className="p-3 md:p-5 lg:p-0 flex justify-between">
       <h3 className="font-semibold text-gray-700/80 text-lg md:text-2xl">UNI Resto Cafe</h3>
 
       <div className="flex gap-2 md:gap-5 items-center">
