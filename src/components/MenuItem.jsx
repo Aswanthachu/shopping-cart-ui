@@ -37,7 +37,7 @@ const MenuItem = ({ dish,setCartCount }) => {
           </h2>
           <div className="w-full flex justify-between items-center">
             <p className="text-xs md:text-base font-bold text-black/75">
-              SAR {dish?.dish_price}
+              {dish?.dish_currency} {dish?.dish_price}
             </p>
             <p className="text-xs md:text-sm font-semibold md:mr-5 lg::mr-20">
               {dish?.dish_calories} calories

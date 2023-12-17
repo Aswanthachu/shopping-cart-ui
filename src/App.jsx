@@ -17,10 +17,17 @@ function App() {
         const response = await axios.get(
           "https://run.mocky.io/v3/ae48aa26-86fc-41d5-88bb-9043c94bf73f"
         );
-        let addSquareBracket = "[" + response.data;
-        let removeSemiColon = addSquareBracket.replace(/;$/, "");
-
-        // setData(JSON.parse(removeSemiColon))
+        let addSquareBracket = JSON.stringify("[\n" + response.data).replace(
+          /([{,]\s*)([a-zA-Z0-9_]+)\s*:/g,
+          '$1"$2":'
+        );
+        console.log(addSquareBracket);
+        // let updated=JSON.stringify(addSquareBracket);
+        // console.log(JSON.parse(addSquareBracket));
+        // let J=JSON.parse(updated)
+        // console.log(typeof J);
+        // console.log(J?.[0]);
+        // setData(JSON.parse(JSON.parse(addSquareBracket)));
       } catch (error) {
         setError(error.message || "An error occurred while fetching data.");
       } finally {
@@ -30,6 +37,8 @@ function App() {
 
     fetchData();
   }, []);
+
+  // console.log(data);
 
   const firstCategory = data?.[0]?.table_menu_list?.[0];
 
