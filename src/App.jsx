@@ -48,7 +48,7 @@ function App() {
   return (
     <main className=" p-0 lg:p-5 font-main">
       <Header data={data[0]} cartCount={cartCount} />
-      <div className=" lg:mt-4 w-full flex overflow-x-auto styled-scrollbar lg:pt-2">
+      <div className=" lg:mt-4 w-full flex overflow-hidden hover:overflow-x-auto styled-scrollbar lg:pt-2">
         {data[0].table_menu_list.map((menu) => (
           <CategoryTab
             key={menu.menu_category_id}

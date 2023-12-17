@@ -63,9 +63,9 @@ const MenuItem = ({ dish,setCartCount }) => {
         </div>
       </div>
       <div className="ml-2 md:ml-10">
-        <div className="w-[80px] h-[80px] md:w-[180px] md:h-[130px] bg-red-300 rounded-xl overflow-hidden">
+        <div className="w-[80px] h-[80px] md:w-[180px] md:h-[130px] rounded-xl overflow-hidden">
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Rocket_lettuce%2C_Butternut_squash%2C_Beetroot%2C_Green_beans%2C_whipped_cream_salad.jpg/220px-Rocket_lettuce%2C_Butternut_squash%2C_Beetroot%2C_Green_beans%2C_whipped_cream_salad.jpg"
+            src={dish?.dish_image}
             className="w-full h-full rounded-xl object-cover"
             alt="menu-item"
           />
