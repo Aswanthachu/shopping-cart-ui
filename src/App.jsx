@@ -17,11 +17,12 @@ function App() {
         const response = await axios.get(
           "https://run.mocky.io/v3/ae48aa26-86fc-41d5-88bb-9043c94bf73f"
         );
-        let addSquareBracket = JSON.stringify("[\n" + response.data).replace(
-          /([{,]\s*)([a-zA-Z0-9_]+)\s*:/g,
-          '$1"$2":'
-        );
-        console.log(addSquareBracket);
+
+        // setData(response.data);
+        // let addSquareBracket = JSON.stringify("[\n" + response.data).replace(
+        //   /([{,]\s*)([a-zA-Z0-9_]+)\s*:/g,
+        //   '$1"$2":'
+        // );
         // let updated=JSON.stringify(addSquareBracket);
         // console.log(JSON.parse(addSquareBracket));
         // let J=JSON.parse(updated)
@@ -37,8 +38,6 @@ function App() {
 
     fetchData();
   }, []);
-
-  // console.log(data);
 
   const firstCategory = data?.[0]?.table_menu_list?.[0];
 
