@@ -9,6 +9,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [cartCount, setCartCount] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -46,25 +47,26 @@ function App() {
 
   return (
     <main className=" p-0 lg:p-5 font-main">
-      <Header data={data[0]} />
-      <ul className=" lg:mt-4 w-full flex overflow-x-auto styled-scrollbar lg:pt-2">
+      <Header data={data[0]} cartCount={cartCount} />
+      <div className=" lg:mt-4 w-full flex overflow-x-auto styled-scrollbar lg:pt-2">
         {data[0].table_menu_list.map((menu) => (
-          <li key={menu.menu_category_id}>
-            <CategoryTab
-              menu={menu}
-              selectedCategory={selectedCategory}
-              setSelectedCategory={setSelectedCategory}
-            />
-          </li>
+          <CategoryTab
+            key={menu.menu_category_id}
+            menu={menu}
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+          />
         ))}
-      </ul>
-      <ul className="w-full">
+      </div>
+      <div className="w-full">
         {selectedCategory.category_dishes.map((dish) => (
-          <li key={dish.dish_id}>
-            <MenuItem dish={dish}/>
-          </li>
+          <MenuItem
+            key={dish.dish_id}
+            setCartCount={setCartCount}
+            dish={dish}
+          />
         ))}
-      </ul>
+      </div>
     </main>
   );
 }

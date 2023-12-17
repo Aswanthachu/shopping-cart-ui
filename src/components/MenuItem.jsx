@@ -1,7 +1,20 @@
 import { PlusIcon, MinusIcon } from "@heroicons/react/24/solid";
 import { cn } from "../lib/utils";
+import { useState } from "react";
 
-const MenuItem = ({ dish }) => {
+const MenuItem = ({ dish,setCartCount }) => {
+  const [count,setCount]=useState(0);
+
+  const handleDecrement = () => {
+    setCount((prevCount) => Math.max(prevCount - 1, 0));
+    if(count > 0) setCartCount(prevCount=>prevCount - 1);
+  };
+
+  const handleIncrement = () => {
+    setCount((prevCount) => prevCount + 1);
+    setCartCount(prevCount=>prevCount + 1);
+  };
+
   return (
     <div className="w-full flex justify-between px-2 py-3 border-b-2 ">
       <div className="w-full flex gap-2">
@@ -34,11 +47,11 @@ const MenuItem = ({ dish }) => {
             {dish?.dish_description}
           </p>
           <div className="bg-green-600 text-white w-fit flex p-1 md:p-2 items-center rounded-full">
-            <button className="p-1 pr-4 md:pr-8">
+            <button className="p-1 pr-4 md:pr-8" onClick={handleDecrement}>
               <MinusIcon className="w-3 md:w-4" />
             </button>
-            <p className="text-sm md:text-base w-fit">2</p>
-            <button className="p-1 pl-4 md:pl-8">
+            <p className="text-sm md:text-base w-fit">{count}</p>
+            <button className="p-1 pl-4 md:pl-8" onClick={handleIncrement}>
               <PlusIcon className=" w-3 md:w-5" />
             </button>
           </div>
