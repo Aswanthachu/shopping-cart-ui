@@ -7,7 +7,7 @@ const CategoryTab = ({ menu, selectedCategory, setSelectedCategory }) => {
         menu.menu_category_id === selectedCategory.menu_category_id
           ? "border-red-500"
           : "border-gray-300/90",
-        "min-w-[170px] md:min-w-[250px] lg:min-w-[400px] h-10 flex items-center text-center justify-center  border-b-[4px] mb-[2px]"
+        "min-w-[170px] md:min-w-[250px] lg:min-w-[400px] w-full h-10 flex items-center text-center justify-center  border-b-[4px] mb-[2px]"
       )}
     >
       <p

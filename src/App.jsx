@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CategoryTab, Header, MenuItem } from "./components";
+import { CategoryTab, Header, MenuItem, SkeltonLoading } from "./components";
 import axios from "axios";
 
 import { data } from "./lib/data";
@@ -47,7 +47,7 @@ function App() {
   }, [firstCategory]);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <SkeltonLoading />;
   }
 
   if (error) {
