@@ -1,7 +1,7 @@
 import { ShoppingCartIcon, ArrowLeftIcon } from "@heroicons/react/24/solid";
 
 const Header = ({data}) => {
-    console.log(typeof JSON.parse(data),data?.restaurant_name);
+
   return (
     <div className="p-3 md:p-5 lg:p-0 flex justify-between">
       <div className="flex gap-2 items-center">
