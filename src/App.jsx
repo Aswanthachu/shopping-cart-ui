@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(import.meta.env.VITE_API_URL);
+        const response = await axios.get("https://run.mocky.io/v3/f47694b8-4d45-4c30-aed0-dd82bb4025fb");
         setData(response.data.data);
       } catch (error) {
         setError(error.message || "An error occurred while fetching data.");
