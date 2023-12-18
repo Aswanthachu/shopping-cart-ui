@@ -57,7 +57,7 @@ const MenuItem = ({ dish,setCartCount }) => {
           </div>
           <p className="text-red-500 text-xs md:text-sm">
             {dish?.dish_Availability
-              ? dish?.addonCat && "customization available"
+              ? dish?.addonCat?.length > 0 ? "customization available" :""
               : "Not available"}
           </p>
         </div>
