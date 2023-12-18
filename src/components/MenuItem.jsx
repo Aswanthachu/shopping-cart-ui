@@ -46,14 +46,14 @@ const MenuItem = ({ dish,setCartCount }) => {
           <p className="text-gray-500 text-xs md:text-sm lg:text-base">
             {dish?.dish_description}
           </p>
-          <div className="bg-green-600 text-white w-fit flex p-1 md:p-2 items-center rounded-full">
-            <button className="p-1 pr-4 md:pr-8" onClick={handleDecrement}>
+          <div className="bg-green-600 text-white w-fit  flex p-1 md:p-2 items-center rounded-full">
+            <div className="p-1 pr-4 md:pr-8" onClick={handleDecrement}>
               <MinusIcon className="w-3 md:w-4" />
-            </button>
+            </div>
             <p className="text-sm md:text-base w-fit">{count}</p>
-            <button className="p-1 pl-4 md:pl-8" onClick={handleIncrement}>
+            <div className="p-1 pl-4 md:pl-8" onClick={handleIncrement}>
               <PlusIcon className=" w-3 md:w-5" />
-            </button>
+            </div>
           </div>
           <p className="text-red-500 text-xs md:text-sm">
             {dish?.dish_Availability
