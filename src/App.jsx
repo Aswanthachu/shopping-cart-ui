@@ -14,9 +14,8 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          "https://run.mocky.io/v3/ae48aa26-86fc-41d5-88bb-9043c94bf73f"
-        );
+        const response = await axios.get(import.meta.env.VITE_API_URL);
+        console.log(response);
 
         // setData(response.data);
         // let addSquareBracket = JSON.stringify("[\n" + response.data).replace(
