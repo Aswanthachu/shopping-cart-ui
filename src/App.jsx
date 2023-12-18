@@ -15,8 +15,6 @@ function App() {
     const fetchData = async () => {
       try {
         const response = await axios.get(import.meta.env.VITE_API_URL);
-        console.log(response);
-
         // setData(response.data);
         // let addSquareBracket = JSON.stringify("[\n" + response.data).replace(
         //   /([{,]\s*)([a-zA-Z0-9_]+)\s*:/g,
